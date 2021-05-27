@@ -4,8 +4,7 @@
 	session_start();
 		include ("conexion.php");
 		
-		$objeto = new Conexion();
-		$con = $objeto->Conectar();
+		$con=conectar();
 	
 if ($con) {
 		$Nombre= $_POST ['nombre'];
@@ -14,11 +13,11 @@ if ($con) {
 		$genero= $_POST ['genero'];
 		$email= $_POST ['email'];
 		$usuario= $_POST ['usuario'];
-		$contraseña= $_POST ['contraseña'];
+		$password= $_POST ['password'];
 		$preferencias= $_POST ['preferencias'];
 		$direccion= $_POST ['direccion'];
 
-		$consulta="insert into usuario values ('$Nombre','$Apellido','$Cedula','$genero','$email','$usuario','$contraseña','$preferencias','$direccion')";
+		$consulta="insert into usuario values ('$Nombre','$Apellido','$Cedula','$genero','$email','$usuario','$password','$preferencias','$direccion')";
 		
 		$resultado=pg_query($con,$consulta);
 		
